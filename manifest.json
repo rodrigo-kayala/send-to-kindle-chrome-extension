@@ -1,0 +1,21 @@
+{
+  "name": "Send to Kindle Extension",
+  "description": "Send to current pocket document to Kindle.",
+  "version": "1.1",
+  "background": {
+    "scripts": ["background.js", "jquery-2.2.0.min.js"]
+  },
+  "permissions": [
+    "activeTab", "http://*/*", "https://*/*", "storage"
+  ],
+  "browser_action": {
+      "default_title": "Send to Kindle",
+      "default_icon": "print_16x16.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+
+  "manifest_version": 2
+}

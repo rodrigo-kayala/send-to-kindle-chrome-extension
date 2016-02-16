@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kindle Sync Options</title>
+        <style>
+            body: { padding: 10px; }
+        </style>
+    </head>
+    <body>
+        <label>
+            <input type="text" id="ksKindleEmail">
+            Kindle E-mail
+        </label>
+        <br>
+        <label>
+            <input type="text" id="ksSmtpServer">
+            E-mail SMTP Server
+        </label>
+        <br>
+        <label>
+            <input type="number" id="ksSmtpPort">
+            E-mail SMTP Port
+        </label>
+        <br>
+        <label>
+            <input type="text" id="ksSenderAddress">
+            E-mail Sender Address
+        </label>
+        <br>
+        <label>
+            <input type="text" id="ksSenderUsername">
+            E-mail Sender Username
+        </label>
+        <br>
+        <label>
+            <input type="password" id="ksSenderPassword">
+            E-mail Sender Password
+        </label>
+        <br>
+
+        <div id="status"></div>
+        <button id="save">Save</button>
+
+        <script src="options.js"></script>
+    </body>
+</html>
