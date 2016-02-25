@@ -5,6 +5,7 @@ function save_options() {
     var senderAddress = document.getElementById('ksSenderAddress').value;
     var senderUsername = document.getElementById('ksSenderUsername').value;
     var senderPassword = document.getElementById('ksSenderPassword').value;
+    var serverUrl = document.getElementById('ksServerUrl').value;
 
     chrome.storage.sync.set({
         ksKindleEmail: kindleEmail,
@@ -12,13 +13,14 @@ function save_options() {
         ksSmtpPort: smtpPort,
         ksSenderAddress: senderAddress,
         ksSenderUsername: senderUsername,
-        ksSenderPassword: senderPassword
+        ksSenderPassword: senderPassword,
+        ksServerUrl: serverUrl
     }, function() {
         var status = document.getElementById('status');
-        status.textContent = 'Options saved.';
+        status.style.display = "";
         setTimeout(function() {
-            status.textContent = '';
-        }, 750);
+            status.style.display = "none";
+        }, 4000);
     });
 }
 
@@ -29,7 +31,8 @@ function restore_options() {
         ksSmtpPort: '',
         ksSenderAddress: '',
         ksSenderUsername: '',
-        ksSenderPassword: ''
+        ksSenderPassword: '',
+        ksServerUrl: ''
     }, function(items) {
         document.getElementById('ksKindleEmail').value = items.ksKindleEmail;
         document.getElementById('ksSmtpServer').value = items.ksSmtpServer;
@@ -37,6 +40,7 @@ function restore_options() {
         document.getElementById('ksSenderAddress').value = items.ksSenderAddress;
         document.getElementById('ksSenderUsername').value = items.ksSenderUsername;
         document.getElementById('ksSenderPassword').value = items.ksSenderPassword;
+        document.getElementById('ksSenderUrl').value = items.ksServerUrl;
     });
 }
 

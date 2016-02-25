@@ -11,7 +11,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         ksSmtpPort: '',
         ksSenderAddress: '',
         ksSenderUsername: '',
-        ksSenderPassword: ''
+        ksSenderPassword: '',
+        ksServerUrl: ''
     }, function(data) {
          if (checkData(data)) {
              console.log('Sending to kindle document ' + tab.url);
@@ -22,7 +23,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                  debugger;
                  alert('Sending to kindle...');
                  $.post(
-                     'http://localhost:6060/',
+                     data.ksServerUrl,
                      JSON.stringify({
                          data:val[0],
                          kindleEmail: data.ksKindleEmail,
@@ -48,7 +49,8 @@ function checkData(data) {
         data.ksSmtpPort &&
         data.ksSenderAddress &&
         data.ksSenderUsername &&
-        data.ksSenderPassword)
+        data.ksSenderPassword &&
+        data.ksServerUrl)
 }
 
 

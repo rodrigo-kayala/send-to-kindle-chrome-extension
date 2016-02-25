@@ -1,45 +1,70 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="../bootstrap.min.css" />
         <title>Kindle Sync Options</title>
         <style>
             body: { padding: 10px; }
         </style>
     </head>
     <body>
-        <label>
-            <input type="text" id="ksKindleEmail">
-            Kindle E-mail
-        </label>
-        <br>
-        <label>
-            <input type="text" id="ksSmtpServer">
-            E-mail SMTP Server
-        </label>
-        <br>
-        <label>
-            <input type="number" id="ksSmtpPort">
-            E-mail SMTP Port
-        </label>
-        <br>
-        <label>
-            <input type="text" id="ksSenderAddress">
-            E-mail Sender Address
-        </label>
-        <br>
-        <label>
-            <input type="text" id="ksSenderUsername">
-            E-mail Sender Username
-        </label>
-        <br>
-        <label>
-            <input type="password" id="ksSenderPassword">
-            E-mail Sender Password
-        </label>
-        <br>
-
-        <div id="status"></div>
-        <button id="save">Save</button>
+        <div class="container">
+            <div class="row well">
+                <div class="col-md-12">
+                    <h1>send-to-kindle configurations</h1>
+                </div>
+                <div class="col-md-12">
+                    <div id="status" class="alert alert-success" role="alert" style="display: none">
+                        options saved.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ksKindleEmail">kindle e-mail</label>
+                        <input class="form-control" type="text" id="ksKindleEmail">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ksSmtpServer">e-mail smtp server</label>
+                        <input class="form-control" type="text" id="ksSmtpServer">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ksSmtpPort">e-mail smtp port</label>
+                        <input class="form-control" type="number" id="ksSmtpPort">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ksSenderAddress">e-mail sender address</label>
+                        <input class="form-control" type="text" id="ksSenderAddress">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ksSenderUsername">e-mail sender username</label>
+                        <input class="form-control" type="text" id="ksSenderUsername">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ksSenderPassword">e-mail sender password</label>
+                        <input class="form-control" type="password" id="ksSenderPassword">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="ksServerUrl">server url</label>
+                        <input class="form-control" type="text" id="ksServerUrl">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button id="save" class="btn btn-primary pull-right">save</button>
+                </div>
+            </div>
+        </div>
 
         <script src="options.js"></script>
     </body>
